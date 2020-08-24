@@ -23,14 +23,14 @@ When prompted, please provide in the surface coordinates as X and Y coordinates 
 ```   
 
 Once the surface is initiated based on the above coordinates, please provide the coordinates for the Robot movement
-in the following format, once robot at a time.
+in the following format, one robot at a time.
 
 
-- Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator)
-- Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position)
+- Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator) ENTER
+- Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
     
 ```   
- 1 1 E
+ 1 1 E 
  FFRLRFL
  
 ```  
@@ -48,6 +48,8 @@ Once the input is process the response is show in the following format:
 ```  
 3 1 S LOST
 ```  
+
+Once the results are returned, you can provide the inputs for next Robot or terminate the application using Ctrl C.
 
 ### Test Case
 
