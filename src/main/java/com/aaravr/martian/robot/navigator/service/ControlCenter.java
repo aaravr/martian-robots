@@ -63,6 +63,7 @@ public class ControlCenter {
     public Optional<Robot> validateAndProcessRobotMovementInput(String initialPosition, String moves) {
 
         Optional<Robot> robot = Optional.empty();
+
         if (Objects.isNull(moves) || moves.length() > 50) {
             throw new InvalidInputException("Movement instruction must be between 1 and 50 chars in length");
         }
@@ -71,11 +72,7 @@ public class ControlCenter {
             String[] robotInitialCoordinates = initialPosition.split(SPACE);
             if (robotInitialCoordinates.length == COORDINATES_LENGTH) {
 
-                int startX = Integer.valueOf(robotInitialCoordinates[X_COORDINATE]);
-                int startY = Integer.valueOf(robotInitialCoordinates[Y_COORDINATE]);
-
-                Position robotInitialPosition = Position.builder().xaxis(startX).yaxis(startY).build();
-                validateRobotInitialPosition(robotInitialPosition);
+                Position robotInitialPosition = getValidatedPosition(robotInitialCoordinates);
 
                 DirectionType facingDirection = DirectionType.getDirection(robotInitialCoordinates[DIRECTION_STRING_INDEX]);
                 Position nextMovementPosition = marsSurface.calculateNextPositionByDirection(robotInitialPosition, facingDirection);
@@ -103,13 +100,19 @@ public class ControlCenter {
         return robot;
     }
 
+    private Position getValidatedPosition(String[] robotInitialCoordinates) {
+        int startX = Integer.valueOf(robotInitialCoordinates[X_COORDINATE]);
+        int startY = Integer.valueOf(robotInitialCoordinates[Y_COORDINATE]);
+
+        Position robotInitialPosition = Position.builder().xaxis(startX).yaxis(startY).build();
+        validateRobotInitialPosition(robotInitialPosition);
+        return robotInitialPosition;
+    }
+
 
     private List<MovementType> generateMoveTypesFromInput(String moves) {
-        if (Objects.nonNull(moves)) {
             return Arrays.stream(ArrayUtils.toObject(moves.toCharArray()))
                     .map(c -> MovementType.getMovementFromKey(String.valueOf(c))).collect(Collectors.toList());
-        }
-        return Collections.emptyList();
     }
 
 
@@ -122,10 +125,10 @@ public class ControlCenter {
 
     private void moveAsPerInstruction(Robot robot, MovementInstruction instruction) {
         try {
-            for (MovementType movement : instruction.getNextMoves()) {
+            instruction.getNextMoves().forEach(move -> {
                 DirectionType previousOffEdgeDirection = this.deathValleyPaths.get(robot.getCurrentPosition());
-                robot.followInstruction(movement, marsSurface, previousOffEdgeDirection);
-            }
+                robot.followInstruction(move, marsSurface, previousOffEdgeDirection);
+            });
         } catch (RobotDiedException exception) {
             robot.setLost(true);
             log.error("Robot died", exception);
@@ -140,9 +143,7 @@ public class ControlCenter {
 
     //TODO: All robots are created with the same scent type for now - Should be created with random scent
     private Robot createARobot(Position robotInitialPosition, DirectionType facingDirection) {
-        Robot robot = Robot.builder().currentPosition(robotInitialPosition).currentFacingDirection(facingDirection)
-                .scentType(ScentType.ARMANI).build();
-        robot.setName(UUID.randomUUID().toString());
-        return robot;
+        return Robot.builder().currentPosition(robotInitialPosition).currentFacingDirection(facingDirection)
+                .scentType(ScentType.ARMANI).name(UUID.randomUUID().toString()).build();
     }
 }
