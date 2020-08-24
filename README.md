@@ -68,4 +68,4 @@ Logs levels can be controlled from the application.yml file
 - [ ] Use better algorithm for changing direction
 - [ ] Refactor Controlcenter and attach behaviour to robots to be make them more autonomous 
 - [ ] Improve test coverage and code quality
-- [ ] Overall code clean
+- [ ] Overall code cleanup
