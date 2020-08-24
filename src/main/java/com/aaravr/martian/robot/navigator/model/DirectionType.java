@@ -46,6 +46,6 @@ public enum DirectionType {
 
         return  Arrays.stream(values())
                 .filter(d -> d.key.equalsIgnoreCase(input.trim())).findFirst()
-                .orElseThrow(() -> new InvalidInputException(String.format("Direction type %s is invalid. Please try again", input)));
+                .orElseThrow(() -> new InvalidInputException(String.format("Direction type %s is invalid. Please provide a valid direction", input)));
     }
 }

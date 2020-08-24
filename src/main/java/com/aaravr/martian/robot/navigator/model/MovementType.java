@@ -21,6 +21,6 @@ public enum MovementType {
         }
 
        return  Arrays.stream(values()).filter(m -> m.key.equalsIgnoreCase(input)).findFirst()
-                .orElseThrow(() -> new InvalidInputException(String.format("Movement type %s is invalid. Please try again", input)));
+                .orElseThrow(() -> new InvalidInputException(String.format("Movement type %s is invalid. Please provide a valid input", input)));
     }
 }

@@ -42,11 +42,11 @@ public class ControlCenterTest {
         Optional<Robot> robot = sut.validateAndProcessRobotMovementInput("3 2 N", "R");
         Assert.assertThat(getPositionString(robot.get(), false), is("3 2 E"));
 
-        robot = sut.validateAndProcessRobotMovementInput("3 2 N", "R");
-        Assert.assertThat(getPositionString(robot.get(), false), is("3 2 E"));
-
         robot = sut.validateAndProcessRobotMovementInput("3 2 N", "RR");
         Assert.assertThat(getPositionString(robot.get(), false), is("3 2 S"));
+
+        robot = sut.validateAndProcessRobotMovementInput("3 2 N", "RRR");
+        Assert.assertThat(getPositionString(robot.get(), false), is("3 2 W"));
 
         robot = sut.validateAndProcessRobotMovementInput("3 2 N", "RRRR");
         Assert.assertThat(getPositionString(robot.get(), false), is("3 2 N"));
