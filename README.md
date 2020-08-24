@@ -31,7 +31,7 @@ in the following format, one robot at a time.
     * Direction indicator character: N - NORTH, E - EAST, S - SOUTH, W - WEST 
     
 * Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
-    * Navigation command charcated: F - FORWARD, L - LEFT (Robot turns 90 degrees anti-clockwise), R - RIGHT (Robot turns 90 degress clockwise)
+    * Navigation command charcater: F - FORWARD, L - LEFT (Robot turns 90 degrees anti-clockwise), R - RIGHT (Robot turns 90 degress clockwise)
     
 ```   
  1 1 E 
