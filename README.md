@@ -37,13 +37,13 @@ in the following format, one robot at a time.
 
 Once the input is process the response is show in the following format:
 
-- Case 1: Successful navigation
+- Case 1: Successful navigation to the target position
 
 ```  
 3 1 S
 ```  
 
-- Case 2: Fallen off grid
+- Case 2: Fallen off the grid
 
 ```  
 3 1 S LOST
