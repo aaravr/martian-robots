@@ -45,20 +45,17 @@ public class NavigatorApplication implements CommandLineRunner {
             System.out.println("RFRFRFRF");
 
 
-            boolean isInstructionForNewRobot = true;
-            String robotInitialPosition = null;
-            String movesDirections = null;
+            String robotInitialPosition;
+            String movesDirections;
 
             while (true) {
-               if (isInstructionForNewRobot && scanner.hasNext()) {
+               if (scanner.hasNext()) {
                    try {
                        robotInitialPosition = scanner.nextLine();
                        movesDirections = scanner.nextLine();
                        controlCenter.validateAndProcessRobotMovementInput(robotInitialPosition, movesDirections);
-                       isInstructionForNewRobot = true;
                    } catch(InvalidInputException e) {
                        log.error(" Invalid Input: " + e.getMessage());
-                       isInstructionForNewRobot = true;
                    }
                }
             }
