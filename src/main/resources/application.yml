@@ -1,0 +1,8 @@
+spring:
+logging:
+  pattern:
+    console: "%msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+    com.aarav.martian: DEBUG
