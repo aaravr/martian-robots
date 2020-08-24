@@ -124,7 +124,7 @@ public class ControlCenter {
         try {
             for (MovementType movement : instruction.getNextMoves()) {
                 DirectionType previousOffEdgeDirection = this.deathValleyPaths.get(robot.getCurrentPosition());
-                robot.move(movement, marsSurface, previousOffEdgeDirection);
+                robot.followInstruction(movement, marsSurface, previousOffEdgeDirection);
             }
         } catch (RobotDiedException exception) {
             robot.setLost(true);
