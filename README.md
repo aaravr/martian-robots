@@ -35,7 +35,7 @@ in the following format, one robot at a time.
  
 ```  
 
-Once the input is process the response is show in the following format:
+Once the input is processed the response is shown in the console, in the following format:
 
 - Case 1: Successful navigation to the target position
 
@@ -56,6 +56,8 @@ Running tests cases is a alternative to running the command line application.
 
 Test cases can be found here [*ControlCenterTest*](src/test/java/com/aaravr/martian/robot/navigator/service/ControlCenterTest.java)
 
+### Log Level
+Logs levels can be controlled from the application.yml file
 
 ### TODO
 - [ ] Improve input handling and input processing to be more robust
