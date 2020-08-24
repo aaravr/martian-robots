@@ -24,6 +24,7 @@ public class NavigatorApplication implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         Scanner scanner = null;
         try {
+            System.out.println("Please provide Mars surface coordinates in X-axis and Y-format as space separate string. Example(5 3)");
             scanner = new Scanner(System.in);
             String surfaceCoordinates = scanner.nextLine();
 
@@ -38,8 +39,8 @@ public class NavigatorApplication implements CommandLineRunner {
             }
 
             System.out.println("Mars surface created - Please provide movement instructions for one Robot at a time, as shown below");
-            System.out.println("Line 1: Xaxis Yaxis DirectionType char (Example: N E S W)");
-            System.out.println("Line 2: Movment directions (Example: FLLRRFF)");
+            System.out.println("Line 1: Robot initial position and facing diretion as space spearated String (Example: 1 1 E)");
+            System.out.println("Line 2: Movement directions (Example: FLLRRFF)");
             System.out.println("Example:");
             System.out.println("1 1 E");
             System.out.println("RFRFRFRF");

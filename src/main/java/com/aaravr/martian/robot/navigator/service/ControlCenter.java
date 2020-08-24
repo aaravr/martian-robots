@@ -67,7 +67,7 @@ public class ControlCenter {
             throw new InvalidInputException("Movement instruction must be between 1 and 50 chars in length");
         }
 
-        if (Objects.nonNull(initialPosition) && Objects.nonNull(moves)) {
+        if (Objects.nonNull(initialPosition)) {
             String[] robotInitialCoordinates = initialPosition.split(SPACE);
             if (robotInitialCoordinates.length == COORDINATES_LENGTH) {
 
@@ -103,6 +103,7 @@ public class ControlCenter {
         return robot;
     }
 
+
     private List<MovementType> generateMoveTypesFromInput(String moves) {
         if (Objects.nonNull(moves)) {
             return Arrays.stream(ArrayUtils.toObject(moves.toCharArray()))
@@ -110,6 +111,7 @@ public class ControlCenter {
         }
         return Collections.emptyList();
     }
+
 
     private void validateRobotInitialPosition(Position position) {
         if (!this.marsSurface.doesPositionExistInSurface(position)) {
