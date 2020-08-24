@@ -27,6 +27,7 @@ in the following format, one robot at a time.
 
 
 * Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator) ENTER
+    * Mars surface is represented using 2D array, starting lower-left as 0,0 and upper right as *(surfaceXaxis - 1, surfaceYaxis - 1)*. Example: (4 , 2) based on the above inputs
     * Direction indicator character: N - NORTH, E - EAST, S - SOUTH, W - WEST 
     
 * Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
