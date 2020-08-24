@@ -52,6 +52,7 @@ Once the input is process the response is show in the following format:
 Once the results are returned, you can provide the inputs for next Robot or terminate the application using Ctrl C.
 
 ### Test Case
+Running tests cases is a alternative to running the command line application. 
 
 Test cases can be found here [*ControlCenterTest*](src/test/java/com/aaravr/martian/robot/navigator/service/ControlCenterTest.java)
 
