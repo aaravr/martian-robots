@@ -16,7 +16,7 @@ $ mvn clean install -U
 $ mvn spring-boot:run
 ```
 
-When prompted, please provide in the surface coordinates as X and Y coordinates as shown below:
+When prompted, please provide the surface coordinates as X and Y coordinates as shown below:
 
 ```   
  5 3
