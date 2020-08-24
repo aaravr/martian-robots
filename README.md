@@ -26,8 +26,11 @@ Once the surface is initiated based on the above coordinates, please provide the
 in the following format, one robot at a time.
 
 
-- Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator) ENTER
-- Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
+* Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator) ENTER
+    * Direction indicator character: N - NORTH, E - EAST, S - SOUTH, W - WEST 
+    
+* Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
+    * Navigation command charcated: F - FORWARD, L - LEFT (Robot turns 90 degrees anti-clockwise), R - RIGHT (Robot turns 90 degress clockwise)
     
 ```   
  1 1 E 
