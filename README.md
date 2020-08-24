@@ -23,7 +23,7 @@ When prompted, please provide in the surface coordinates as X and Y coordinates 
 ```   
 
 Once the surface is initiated based on the above coordinates, please provide the coordinates for the Robot movement
-in the following format, once robot at a time
+in the following format, once robot at a time.
 
 
 - Line 1: 1 1 E (Space separated X and Y coordinate along with direction indicator)
@@ -34,6 +34,24 @@ in the following format, once robot at a time
  FFRLRFL
  
 ```  
+
+Once the input is process the response is show in the following format:
+
+- Case 1: Successful navigation
+
+```  
+3 1 S
+```  
+
+- Case 2: Fallen off grid
+
+```  
+3 1 S LOST
+```  
+
+### Test Case
+
+Test cases can be found here [*ControlCenterTest*](src/test/java/com/aaravr/martian/robot/navigator/service/ControlCenterTest.java)
 
 
 ### TODO
