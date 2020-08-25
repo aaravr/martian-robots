@@ -5,6 +5,7 @@ Sequential navigation of Robots on the rectangular surface of Mars
 ### Tech Stack
 - SpringBoot2
 - Java
+- Maven
 
 
 ### Step to run 
@@ -31,7 +32,7 @@ in the following format, one robot at a time.
     * Direction indicator character: N - NORTH, E - EAST, S - SOUTH, W - WEST 
     
 * Line 2: FRLRFF (String of maximum 50 chars in length, in char indicating movement position) ENTER
-    * Navigation command charcater: F - FORWARD, L - LEFT (Robot turns 90 degrees anti-clockwise), R - RIGHT (Robot turns 90 degrees clockwise)
+    * Navigation command character: F - FORWARD, L - LEFT (Robot turns 90 degrees anti-clockwise), R - RIGHT (Robot turns 90 degrees clockwise)
     
 ```   
  1 1 E 
@@ -53,10 +54,10 @@ Once the input is processed the response is shown in the console, in the followi
 3 1 S LOST
 ```  
 
-Once the results are returned, you can provide the inputs for next Robot or terminate the application using Ctrl C.
+Once the results are returned, you can provide the inputs for next Robot or terminate the application by typing Ctrl C.
 
 ### Test Case
-Running tests cases is a alternative to running the command line application. 
+Running tests cases is an alternative to running the command line application. 
 
 Test cases can be found here [*ControlCenterTest*](src/test/java/com/aaravr/martian/robot/navigator/service/ControlCenterTest.java)
 
